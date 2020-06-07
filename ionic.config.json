@@ -1,0 +1,8 @@
+{
+  "name": "Ekpichio",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
