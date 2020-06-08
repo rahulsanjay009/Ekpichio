@@ -14,14 +14,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   addUser(user: any): Observable<any> {
-    return this.http.post<any>('https://441f71fb2118.ngrok.io/api/create-user', user, this.httpOptions)
+    return this.http.post<any>('/api/create-user', user, this.httpOptions)
       .pipe(
         catchError(this.handleError<any>('Added User'))
       );
   }
 
   getUser(id): Observable<any[]> {
-    return this.http.get<any[]>('https://441f71fb2118.ngrok.io/api/get-user/' + id)
+    return this.http.get<any[]>('/api/get-user/' + id)
       .pipe(
         tap(_ => console.log(`user fetched: ${id}`)),
         catchError(this.handleError<any[]>(`Get user id=${id}`))
@@ -29,7 +29,7 @@ export class UserService {
   }
 
   getUserList(): Observable<any[]> {
-    return this.http.get<any[]>('https://441f71fb2118.ngrok.io/api')
+    return this.http.get<any[]>('/api')
       .pipe(
         tap(songs => console.log('users fetched!')),
         catchError(this.handleError<any[]>('Get users', []))
@@ -37,7 +37,7 @@ export class UserService {
   }
 
   updateUser(id, user: any): Observable<any> {
-    return this.http.put('https://441f71fb2118.ngrok.io/api/update-user/' + id, user, this.httpOptions)
+    return this.http.put('/api/update-user/' + id, user, this.httpOptions)
       .pipe(
         tap(_ => console.log(`user updated: ${id}`)),
         catchError(this.handleError<any[]>('Update user'))
@@ -45,7 +45,7 @@ export class UserService {
   }
 
   deleteUser(id): Observable<any[]> {
-    return this.http.delete<any[]>('https://441f71fb2118.ngrok.io/api/delete-user/' + id, this.httpOptions)
+    return this.http.delete<any[]>('/api/delete-user/' + id, this.httpOptions)
       .pipe(
         tap(_ => console.log(`user deleted: ${id}`)),
         catchError(this.handleError<any[]>('Delete user'))
