@@ -34,7 +34,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faye-websocket": "^0.11.3",
-    "mongoose": "^5.9.18",
+    "mongoose": "^5.13.15",
     "regenerate": "^1.4.1",
     "regenerator-transform": "^0.14.4",
     "rxjs": "~6.5.1",
